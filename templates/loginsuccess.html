@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="" rel="stylesheet">
+    </head>
+    <body>
+        <p>登录成功</p>
+        <p>当前等级:{{ current_level }}</p>
+        <a href="{{ url_for('querypage', current_level=current_level) }}">click here to the main page</a>
+    </body>
+    </html>
+

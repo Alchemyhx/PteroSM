@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../static/css/login.css" rel="stylesheet">
+    </head>
+    <body>
+       
+        <div id="top">
+            <div id="menu">
+                <ul>
+                    <li><img src="../static/img/ptero_white.jpg" width="100%" height="30%"></li>
+                    <li><a href="{{url_for('mainpage')}}">Main Page</a></li>
+                    <li class="mi"><a href="{{url_for('loginpage')}}">Login </a></li>
+                    <li class="mi"><a href="{{url_for('regpage')}}">Sign up</a></li>
+                    <li><a href="">Donate</a></li>
+                    <li><a href="https://www.cryptopp.com/wiki/SM2">Wiki</a></li>
+                    <li><a href="">Help</a></li>
+            
+                </ul>
+            </div>
+        </div>
+        <div id="box">
+        <form name = "form_login" method="get" action='/login'>
+            <p><img src="../static/img/1.jpg" width="50%" height="25%"> </p>
+            <p class="t1">Login Ptero</p>
+			<p class="t2">Release Version 0.1</p>
+			<p><input type="text" value="" placeholder="Enter Your Username"name="user" class="textbox"></p>
+			<p><input type="password" value="" name="password" placeholder="Password"class="textbox"></p>
+            <p><input type="submit" value="Login" class="submit" onsubmit="return Gomain()"></p>
+        </form>
+        <form name = "form_reg" method="get" action='/reg'>
+            <p><input type="submit" value="Sign up" class="submit"></p>
+        </form>
+        </div>
+    <script>
+     function Gomain()
+     {
+        location.href("./userhome.html");
+        return true;
+     }
+    </script>
+    </body>
+        

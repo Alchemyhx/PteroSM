@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="row">
+    {% if current_level == 1 %}
+        <h4>The current_level is 2, so you can get the whole information</h4>
+        <hr/>
+        <form method="POST" action="{{ url_for('query_1')}}">
+            <hr/>Please input  you want to know<br>
+            <input type="text" name="queryname" placeholder="queryname">
+            <br>
+            <input type="submit" value="Submit">
+        </form> 
+    {% elif current_level == 2 %}
+        <h4>The current_level is 2, so you can not get the top secret information</h4>
+        <hr/>
+        <form method="POST" action="{{ url_for('query_2')}}">
+            <hr/>Please input  you want to know<br>
+            <input type="text" name="queryname" placeholder="queryname">
+            <br>
+            <input type="submit" value="Submit">
+        </form> 
+    {% elif current_level == 3 %}
+        <h4>The current_level is 3, so you can not get the top secret information and the confidential information</h4>
+        <hr/>
+        <form method="POST" action="{{ url_for('query_3')}}">
+            <hr/>Please input  you want to know<br>
+            <input type="text" name="queryname" placeholder="queryname">
+            <br>
+            <input type="submit" value="Submit">
+        </form> 
+    {% else %}
+        <h4>The current_level is 4, so you can only get the public information</h4>
+        <hr/>
+        <form method="POST" action="{{ url_for('query_4')}}">
+            <hr/>Please input  you want to know<br>
+            <input type="text" name="queryname" placeholder="queryname">
+            <br>
+            <input type="submit" value="Submit">
+        </form> 
+    {% endif %}
+</div>
+{% endblock %}

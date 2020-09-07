@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign Up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../static/css/reg.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="top">
+            <div id="menu">
+                <ul>
+                    <li><img src="../static/img/ptero_white.jpg" width="100%" height="30%"></li>
+                    <li><a href="{{url_for('mainpage')}}">Main Page</a></li>
+                    <li class="mi"><a href="{{url_for('loginpage')}}">Login </a></li>
+                    <li class="mi"><a href="{{url_for('regpage')}}">Sign up</a></li>
+                    <li><a href="">Donate</a></li>
+                    <li><a href="https://www.cryptopp.com/wiki/SM2">Wiki</a></li>
+                    <li><a href="">Help</a></li>
+              
+                </ul>
+            </div>
+        <form name="form_reg" id="form1" method="get" action='/registuser' method="get" onSubmit = "return check()">
+        <div id="box">
+            <p><img src="../static/img/1.jpg" width="50%" height="25%"> </p>
+            <p class="t1">Register new account</p>
+            <p><input  type="text" value="" placeholder="Enter Your Username"name="user" class="textbox"></p>
+            <p><input  type="text" value="" placeholder="Enter Your Email"name="email" class="textbox"></p>
+            <p><select  name="level" placeholder="Choose A Level" class="levelbox">
+                <option value="4" selected="selected">公开</option>
+                <option value="3">秘密</option>
+                <option value="2">机密</option>
+                <option value="1">绝密</option>
+                </select>
+            <p><input type="password" value="" name="password" placeholder="Password"class="textbox"></p>
+            <p><input type="password" value="" name="confirm_password" placeholder="Confirm Password"class="textbox"></p>
+            <p class="button"><input type="submit" value="Sign Up" class="submit"></p>
+        </form>
+        </div>
+
+        </div>
+        <script>
+            function check() {
+            var uPattern = /^[a-zA-Z0-9_-]{4,16}$/;  
+            if(!uPattern.test(form_reg.user.value))
+            {
+                alert("Invalid Username!");
+                return false;
+            }
+            var pPattern = /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*_-? ]).*$/;  
+            if (!pPattern.test(form_reg.password.value))
+            {
+                alert("Invalid Password!");
+                return false;
+            }
+            var ePattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (!ePattern.test(form_reg.email.value))
+            {
+                alert("Invalid email address!");
+                return false;
+            }
+            if(!(form_reg.password.value==form_reg.confirm_password.value))
+            {
+                alert("两次密码输入不一致!");
+                return false;
+            }
+                return true;
+    }
+    </script>
+    </body>

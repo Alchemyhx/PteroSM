@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ptero Homepage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../static/css/home.css" rel="stylesheet">
+    </head>
+    <body>
+        {% block body %}
+        <div id="top">
+            <div id="menu">
+                <ul>
+                    <li><img src="../static/img/ptero_white.jpg" width="100%" height="30%"></li>
+                    <li><a href="{{url_for('mainpage')}}">Main Page</a></li>
+                    <li class="mi"><a href="{{url_for('loginpage')}}">Login </a></li>
+                    <li class="mi"><a href="{{url_for('regpage')}}">Sign up</a></li>
+                    <li><a href="">Donate</a></li>
+                    <li><a href="https://www.cryptopp.com/wiki/SM2">Wiki</a></li>
+                    <li><a href="">Help</a></li>
+    
+                </ul>
+            </div>
+        </div>
+        
+        <div id="body">
+               
+            <p><img src="../static/img/ptero_white.jpg" width="50%" height="10%" class="img"></p>
+            {% if current_level == 1 %}
+            <form method="POST" action="{{ url_for('query_1')}}">
+                <p><input type="text" value="" placeholder="当前等级:1" name="queryname" class="textbox">
+                <input type="submit" value="Search" class="submit"></p>
+            </form>
+            {% elif current_level == 2 %}
+            <form method="POST" action="{{ url_for('query_2')}}">
+                    <p><input type="text" value="" placeholder="当前等级:2" name="queryname" class="textbox">
+                    <input type="submit" value="Search" class="submit"></p>
+            </form>
+            {% elif current_level == 3 %}
+            <form method="POST" action="{{ url_for('query_3')}}">
+                    <p><input type="text" value="" placeholder="当前等级:3" name="queryname" class="textbox">
+                    <input type="submit" value="Search" class="submit"></p>
+            </form>
+            {% else %}
+            <form method="POST" action="{{ url_for('query_4')}}">
+                    <p><input type="text" value="" placeholder="当前等级:4" name="queryname" class="textbox">
+                    <input type="submit" value="Search" class="submit"></p>
+            </form>
+            {% endif %}
+        </div>
+        <div id="bottom">
+
+        </div>
+        {% endblock %}
+    </body>
+    </html>

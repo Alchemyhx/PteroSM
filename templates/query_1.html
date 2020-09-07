@@ -1,0 +1,18 @@
+
+
+{% block body %}
+<div class="row">
+    <h2>the top secret information: {{ attribute1 }}</h2>
+    <hr/>
+    <h2>the confidential information: {{ attribute2 }}</h2>
+    <hr/>
+    <h2>the secret information: {{ attribute3 }}</h2>
+    <hr/>
+    <h2>the public information: {{ attribute4 }}</h2>
+    <hr/>
+    <h5>the root hashed information: {{ node_root }}</h5>
+    <hr/>
+	<h5><a href="{{url_for('mainpage')}}">Back to main page</a></h5>
+    <hr/>
+</div>
+{% endblock %}
